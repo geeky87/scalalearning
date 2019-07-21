@@ -1,5 +1,5 @@
 object HelloScalaWorld {
-  def kiran(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit = {
     println("Hello Scala")
 
  }
