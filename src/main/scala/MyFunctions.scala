@@ -70,13 +70,13 @@ object MyFunctions {
 
   // Higher Order Function
    def myHigherOrderFunction (args : Int *): Unit = {
-
    val sal = args.toList
-
    val myDoubleSal = (x : Int) => x * x * x
-
    val myDoubleList = sal.map(myDoubleSal(_))
 
    }
+
+
+
 
 }

@@ -1,22 +1,65 @@
+import Array._
+import scala.collection.mutable
 
-object CollectionInScala {
+object MyCollection {
   def main(args: Array[String]): Unit = {
 
+    // ways of declaration of the Array
+    val a : Array[Int] = new Array[Int](10)
+    val l : Array[Int] = Array()
+    val b = new Array[Int](50)
+    val c = Array(1,2,3)
+
+    val e = Range(10,100)
+    val f = Range(2,10,1)
+
+    // Multidemensional Array
+    val k = ofDim[Int](3,3)
+
+    // Concatenation : Need to import the Array Package
+    val d = Array.concat(c,a)
+
+    // Operation on the Array
     val myArray : Array[Int]= new Array[Int](20)
     val myArray1 = Array(10,20,45)
     myArray(7)= 10
     println(myArray.length)
     println(myArray1.length)
 
-  val myRange = 1 to 10
-    println(myRange.length)
 
-  val myMap = Map ("India" -> "Delhi" ,"France"->"Paris")
-    println("My Map:"+ myMap.keys)
+    // tuples examples
+    val t = Tuple3("1",2010.5451,"Kiran")
+    t.productIterator.foreach(i => println("value :"+ i) )
 
-    println(myFunction(10,20))
-    myRfunction("Hello There we just getting started")
+    // Iterators
+    val myIterator =Iterator(1,2,3)
+     while (myIterator.hasNext)
+       println(myIterator.next())
 
+    // List
+    val myLList : List[Int] = List(1,2,3)
+    println("Head of my List is :"+ myLList.head)
+    println("Tail of my List is :"+ myLList.tail)
+
+    val myFilledList = List.fill(8)("We can Do it")
+    myFilledList.foreach(i=> println(i))
+
+
+    // Stacks
+
+    var myStack = mutable.Stack[Int]()
+
+    myStack.push(1)
+    myStack.push(2)
+    myStack.push(3)
+
+    myStack.foreach(i => println(i))
+
+    // LinearSeq
+
+    var myLinearSeq = mutable.LinearSeq
+
+  /*
     var a =1041
     var myArray2 : Array[Int]= new Array[Int](32)
 
@@ -76,7 +119,9 @@ object CollectionInScala {
   def myRfunction (a :String) :Unit = {
     println(a)
   }
+*/
 
 
+}
 }
 
