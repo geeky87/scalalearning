@@ -1,4 +1,4 @@
-object MyScalaDataTypes {
+object MyScalaDataTypes  {
 
   def main(args: Array[String]): Unit = {
 
