@@ -31,21 +31,57 @@ scala> def sum(a:Int,b:Int):Int={
     | }
 
  */
-object MyFunctions {
+object MyFunctions extends App {
 
-  def main(args: Array[String]): Unit = {
-
-    val myUnnamedFunction = (x: Int) => x * x
-    println("My Function output is :" + myUnnamedFunction(10))
-
-    println("My Factorial Function output for 6 is :" + myFactorial(6))
-    println("My Named Function output is below:" + myNamedArgs(y = 9, x = 10))
-
-    println("My Varaible Number of Args output :" + myVaribaleNumArgs(20,200,700))
-
-    println("My Varaible Higher Order Function output :" + myHigherOrderFunction(2,20,70))
-
+  // Simple Function
+  def myfavoriteFood(): String = {
+    "White Pasta"
   }
+
+  val whatIsMyFavorite = myfavoriteFood()
+  println(s"My Food is : ${whatIsMyFavorite}")
+
+  // Function Without Parenthesis
+  def myfavoriteFood1 = "Yummy Pulav"
+  println(s"My Food is : ${myfavoriteFood1}")
+
+  // Function Without Return Type
+  def myNoReturnTypeFunction () : Unit = {
+    println("Printing Something as it has no Return Type")
+  }
+  myNoReturnTypeFunction()
+
+  // Function With Paramater
+   def multiply(x :Int,y:Int): Long={
+     x*y
+   }
+   println(s"Result of multiply Function: ${multiply(100,2541)}")
+
+  // Function With the Default Value
+  def multiplydef(x :Int,y:Int = 785): Long={
+    x*y
+  }
+  println(s"Result of multiply Default Function: ${multiplydef(180)}")
+
+   // Default with Option Type
+   def multiplydefOption(x :Int,y:Int = 785,z :Option[Int]=None): Long={
+     z match {
+       case Some(e) => x*y*e
+       case None=> x*y
+     }
+   }
+  println(s"Result of multiply Option Default Function: ${multiplydefOption(180)}")
+
+
+
+
+  // Unnamed Function
+  val myUnnamedFunction = (x: Int) => x * x
+  println("My Function output is :" + myUnnamedFunction(10))
+  println("My Factorial Function output for 6 is :" + myFactorial(6))
+  println("My Named Function output is below:" + myNamedArgs(y = 9, x = 10))
+  println("My Varaible Number of Args output :" + myVaribaleNumArgs(20, 200, 700))
+  println("My Varaible Higher Order Function output :" + myHigherOrderFunction(2, 20, 70))
 
   // recursive Function
   def myFactorial(x: Int): Int = {
@@ -69,14 +105,12 @@ object MyFunctions {
   }
 
   // Higher Order Function
-   def myHigherOrderFunction (args : Int *): Unit = {
-   val sal = args.toList
-   val myDoubleSal = (x : Int) => x * x * x
-   val myDoubleList = sal.map(myDoubleSal(_))
+  def myHigherOrderFunction(args: Int*): Unit = {
+    val sal = args.toList
+    val myDoubleSal = (x: Int) => x * x * x
+    val myDoubleList = sal.map(myDoubleSal(_))
 
-   }
-
-
+  }
 
 
 }

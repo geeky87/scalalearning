@@ -1,4 +1,4 @@
-object MyScalaDataTypes extends App {
+object MyDataTypes extends App {
 
     //Scala Byte    Size: 8-bit  Signed value   Range: -128 to 127
     //Scala Short   Size: 16-bit Signed value   Range: -32768 to 32767
@@ -58,6 +58,11 @@ object MyScalaDataTypes extends App {
     lazy val myLazyFloat : Float = 4514124.787f
     lazy val myLazyDouble : Double = 75748454875274.0
 
+    // Any AnyRef AnyVal
+    val myAny : Any = "Hey I couuld be Any type"
+    val myAnyRef : AnyRef = "Hey I couuld be Any Ref type"
+    val myAnyVal : AnyVal = 2.54512
+
     // Type Inference
     val myTypeInferInt = 56897514
 
@@ -84,15 +89,22 @@ object MyScalaDataTypes extends App {
     val myTobeConvertedString : String = myTobeConvertedInt.toString
 
 
+    // Tuple Data Type
+    val myTuple = Tuple2("Kiran Achrya",30)
+    println(s"My Tuple ${myTuple}")
 
+    val myDtuple = ("Kiran","Swathi","5 Years of Marriage",100)
 
+    // Enumeration Types
+    object DonutTaste extends Enumeration{
+        type DonutTaste = Value
 
+        val Tasty       = Value(0, "Tasty")
+        val VeryTasty   = Value(1, "Very Tasty")
+        val Ok          = Value(-1, "Ok")
+    }
 
-
-
-
-
-
+    println(DonutTaste.values)
 
 
 }
