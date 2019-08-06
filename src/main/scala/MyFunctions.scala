@@ -118,6 +118,18 @@ object MyFunctions extends App {
   println(s"Result of Polymorphic Function: ${myPolyMorphicFun(100)}")
   println(s"Result of Polymorphic Function: ${myPolyMorphicFun(100.7845)}")
 
+  //Function As Symbols
+  class MyAgeCalc{
+    val age  =29
+    def +(a : Int)= {
+      age + a
+    }
+  }
+   val myAge = new  MyAgeCalc
+   println(s"My Age for Next Year Would be :${myAge+1} ")
+
+
+
   // Unnamed Function
   val myUnnamedFunction = (x: Int) => x * x
   println("My Function output is :" + myUnnamedFunction(10))
