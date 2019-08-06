@@ -57,7 +57,7 @@ object MyCollection {
 
     // LinearSeq
 
-    var myLinearSeq = mutable.LinearSeq
+    //var myLinearSeq = mutable.LinearSeq
 
   /*
     var a =1041

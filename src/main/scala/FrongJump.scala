@@ -3,9 +3,9 @@ import scala.util.control.Breaks
 object FrongJump {
 
   def main(args: Array[String]): Unit = {
-  print("Hey Wassup solution is "+ solution(1,5,2))
+  print("Hey Wassup solution is ")//+ solution(1,5,2))
   }
-
+/*
   def solution(x: Int, y: Int, d: Int): Int = {
     // write your code in Scala 2.12
     val loop = new Breaks
@@ -20,6 +20,6 @@ object FrongJump {
   return i
 
   }
-
+*/
 
 }
