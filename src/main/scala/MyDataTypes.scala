@@ -1,6 +1,4 @@
-object MyScalaDataTypes {
-
-  def main(args: Array[String]): Unit = {
+object MyDataTypes extends App {
 
     //Scala Byte    Size: 8-bit  Signed value   Range: -128 to 127
     //Scala Short   Size: 16-bit Signed value   Range: -32768 to 32767
@@ -30,6 +28,7 @@ object MyScalaDataTypes {
 
     //Since all these Scala Data types are objects and not primitives, it is possible to call methods on these objects.
 
+    // Val
     val myByte : Byte = 127
     val myShort : Short = 25641
     val myInt : Int = 564859
@@ -39,19 +38,76 @@ object MyScalaDataTypes {
     val myFloat : Float = 4514124.787f
     val myDouble : Double = 75748454875274.0
 
+    //var
+    var myValByte : Byte = 55
+    var myValShort : Short = 55
+    var myValInt : Int = 55565
+    var myValLong : Int = 55565568
+
+    val myVarBoolean : Boolean = true
+    val myVarFloat : Float = 4514124.787f
+    val myVarDouble : Double = 75748454875274.0
+
+    // Lazy Val
+    lazy val myLazyByte : Byte = 127
+    lazy val myLazyShort : Short = 25641
+    lazy val myLazyInt : Int = 564859
+    lazy val myLazyLong : Long = 457894785L
+
+    lazy val myLazyBoolean : Boolean = true
+    lazy val myLazyFloat : Float = 4514124.787f
+    lazy val myLazyDouble : Double = 75748454875274.0
+
+    // Any AnyRef AnyVal
+    val myAny : Any = "Hey I couuld be Any type"
+    val myAnyRef : AnyRef = "Hey I couuld be Any Ref type"
+    val myAnyVal : AnyVal = 2.54512
+
+    // Type Inference
+    val myTypeInferInt = 56897514
+
+    // Declartion without the Initial Value
+    var myTypeInferLong :Long = _
+
+    // String Interpolation to Print the Variable
+    val myString = "Kiran Acharya"
+    println(s"Hello there $myString")
+
+    // Case Class declaration
+    case class myCaseClass(firstName: String, LastName : String)
+    val myName :myCaseClass = myCaseClass("Kiran","Acharya")
+    println(s"Hello once Again ${myName.firstName} ${myName.LastName}")
+
+    val myFloatFormat =50.56452
+    println(s"Hello Formatted Float ${myFloatFormat%.20f}")
+    println(f"Hello Formatted Float ${myFloatFormat%.20f}")
+
+     println(raw"Hello Formatted /n Float ${myFloatFormat%.20f}")
+
+    // Type Conversion
+    val myTobeConvertedInt  = 1456122
+    val myTobeConvertedString : String = myTobeConvertedInt.toString
 
 
+    // Tuple Data Type
+    val myTuple = Tuple2("Kiran Achrya",30)
+    println(s"My Tuple ${myTuple}")
 
+    val myDtuple = ("Kiran","Swathi","5 Years of Marriage",100)
 
+    // Enumeration Types
+    object DonutTaste extends Enumeration{
+        type DonutTaste = Value
 
+        val Tasty       = Value(0, "Tasty")
+        val VeryTasty   = Value(1, "Very Tasty")
+        val Ok          = Value(-1, "Ok")
+    }
 
+    println(DonutTaste.values)
 
-
-
-
-
-  }
 
 }
+
 
 
