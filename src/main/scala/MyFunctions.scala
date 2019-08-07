@@ -1,3 +1,4 @@
+import MyFunctions.myVaribaleNumArgs
 import sun.plugin2.main.client.DisconnectedExecutionContext
 
 /*
@@ -101,6 +102,7 @@ object MyFunctions extends App {
     }
 
   }
+
   println(s"Result of Generic Parameter Type Function: ${myGenericParamFun(100)}")
   println(s"Result of Generic Parameter Type Function: ${myGenericParamFun(100.7845)}")
 
@@ -108,35 +110,40 @@ object MyFunctions extends App {
   def myPolyMorphicFun[T](discount: T): List[T] = {
     discount match {
       case d: Double => print("Oh No its double")
-              List[T](discount)
+        List[T](discount)
       case a: Int => print(" oh Ya its Int")
-              List[T](discount)
+        List[T](discount)
       case _ => print("Oh No you dint Send Good Data type")
         List[T](discount)
     }
   }
+
   println(s"Result of Polymorphic Function: ${myPolyMorphicFun(100)}")
   println(s"Result of Polymorphic Function: ${myPolyMorphicFun(100.7845)}")
 
   //Function As Symbols
-  class MyAgeCalc{
-    val age  =29
-    def +(a : Int)= {
+  class MyAgeCalc {
+    val age = 29
+
+    def +(a: Int) = {
       age + a
     }
   }
-   val myAge = new  MyAgeCalc
-   println(s"My Age for Next Year Would be :${myAge+1} ")
 
+  val myAge = new MyAgeCalc
+  println(s"My Age for Next Year Would be :${myAge + 1} ")
 
 
   // Unnamed Function
   val myUnnamedFunction = (x: Int) => x * x
-  println("My Function output is :" + myUnnamedFunction(10))
-  println("My Factorial Function output for 6 is :" + myFactorial(6))
-  println("My Named Function output is below:" + myNamedArgs(y = 9, x = 10))
+  println("My Unnamed Function  output is :" + myUnnamedFunction(10))
 
-  println("My Varaible Higher Order Function output :" + myHigherOrderFunction(2, 20, 70))
+  val myUnnamedFunction2 = (x: Int) => {
+    val inter = x * x
+    inter * 10
+  }
+  println("My Unnamed Function 2 output is :" + myUnnamedFunction2(10))
+
 
   // recursive Function
   def myFactorial(x: Int): Int = {
@@ -145,30 +152,39 @@ object MyFunctions extends App {
     x * myFactorial(x - 1)
   }
 
+  println("My Factorial Function output for 6 is :" + myFactorial(6))
+
   // Named Arguments
   def myNamedArgs(x: Int, y: Int): Unit = {
     println("x is assigned with : " + x + "Y is assigned with : " + y)
 
   }
 
+  println("My Named Function output is below:" + myNamedArgs(y = 9, x = 10))
+
   // Varible Number of Arguments
   def myVaribaleNumArgs(args: Int*): Int = {
     var sum = 0
     for (a <- args)
       sum += a
-    return sum
+    sum
   }
+
   println("My Varaible Number of Args output :" + myVaribaleNumArgs(20, 200, 700))
-  val vararg = Array[Int](200,588,777)
-  println("My Varaible Number of Args output :" + myVaribaleNumArgs(vararg:_*))
+  val vararg = Array[Int](200, 588, 777)
+  println("My Varaible Number of Args output :" + myVaribaleNumArgs(vararg: _*))
 
   // Higher Order Function
-  def myHigherOrderFunction(args: Int*): Unit = {
-    val sal = args.toList
-    val myDoubleSal = (x: Int) => x * x * x
-    val myDoubleList = sal.map(myDoubleSal(_))
-
+  def myHigherOrderFunction(age: Int)(f: Int => Int): Int = {
+    val newAge = age + 10
+    f(newAge)
   }
+
+  println("My Higher Order Function output :" + myHigherOrderFunction(100) { age => age / 10 })
+  println("My Higher Order Function output :" + myHigherOrderFunction(100)(myVaribaleNumArgs(_)))
+
+
+  // Call by Name and Call by Value
 
 
 }
