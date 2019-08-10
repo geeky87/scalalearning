@@ -106,6 +106,14 @@ object MyDataTypes extends App {
 
     println(DonutTaste.values)
 
+    // tuples examples
+    val t = Tuple3("1", 2010.5451, "Kiran")
+    t.productIterator.foreach(i => println("value :" + i))
+
+    // Iterators
+    val myIterator = Iterator(1, 2, 3)
+    while (myIterator.hasNext)
+        println(myIterator.next())
 
 }
 
