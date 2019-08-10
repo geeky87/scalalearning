@@ -5,37 +5,6 @@ import scala.collection.immutable.{BitSet, HashMap, HashSet, ListMap, ListSet, Q
 
 object MyImmutableCollection extends App {
 
-  // ways of declaration of the Array
-  val a: Array[Int] = new Array[Int](10)
-  val l: Array[Int] = Array()
-  val b = new Array[Int](50)
-  val c = Array(1, 2, 3)
-
-  val e = Range(10, 100)
-  val f = Range(2, 10, 1)
-
-  // Multidemensional Array
-  val k = ofDim[Int](3, 3)
-
-  // Concatenation : Need to import the Array Package
-  val d = Array.concat(c, a)
-
-  // Operation on the Array
-  val myArray: Array[Int] = new Array[Int](20)
-  val myArray1 = Array(10, 20, 45)
-  myArray(7) = 10
-  println(myArray.length)
-  println(myArray1.length)
-
-  // tuples examples
-  val t = Tuple3("1", 2010.5451, "Kiran")
-  t.productIterator.foreach(i => println("value :" + i))
-
-  // Iterators
-  val myIterator = Iterator(1, 2, 3)
-  while (myIterator.hasNext)
-    println(myIterator.next())
-
   //***************************************************
   // Immutable Collections
   //***************************************************
